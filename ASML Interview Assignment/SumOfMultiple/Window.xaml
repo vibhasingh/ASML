@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="ASML.InterviewTest.SumOfMultiple.Window"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ASML.InterviewTest.SumOfMultiple"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance local:ViewModel}" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Sum Of Multiple" FontSize="16" FontFamily="Bold">
+            SumOfMultiple
+        </Label>
+        <TextBlock Grid.Row="1" TextAlignment="Justify" TextWrapping="WrapWithOverflow" FontStyle="Italic" Text="Find the sum of all natural numbers that are a multiple of 3 or 5 below a limit provided as input"/>
+
+        <StackPanel Grid.Row="2" Margin="0,4,0,4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" Text="Enter Limit:" />
+            <TextBox Width="100" VerticalContentAlignment="Center" Margin="10,0,0,0" Text="{Binding Path=Limit, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Sum}" Foreground="Green"/>
+
+        <Button Grid.Row="4" Width="100" Margin="0,4,0,4" Content="Calculate Sum" Command="{Binding Path=CalculateSum}" />
+
+    </Grid>
+</UserControl>
